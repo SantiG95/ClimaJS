@@ -1,3 +1,4 @@
+//VARIABLES
 var inputCiudad = document.getElementById("ciudadInput")
 var gpsButton = document.getElementById("gps")
 var enviarButton = document.getElementById("enviar")
@@ -9,9 +10,17 @@ var informacionClima = document.getElementById("informacionClima")
 
 var posicion;
 
+var body = document.getElementsByTagName("body")[0]
+var sol = document.getElementsByClassName("sol")[0]
+var luna = document.getElementsByClassName("luna")[0]
+var colinas = document.getElementsByClassName("colina")
+
 const weatherAPI = "18adba3bc5141e5f5c3da4e751534d25"
 //const weatherAPI = "3045dd712ffe6e702e3245525ac7fa38"
 
+
+
+//FUNCIONES
 function obtenerLocalizacion(){
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(obtenerInformacionClimaPorGPS)
@@ -37,6 +46,9 @@ function obtenerInformacionClimaPorGPS(posicionObtenida){
     })
 }
 
+
+//EJECUCION
+//Eventos para los botones
 gpsButton.addEventListener("click", () =>{
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(obtenerInformacionClimaPorGPS)
@@ -62,3 +74,20 @@ enviarButton.addEventListener('click', () => {
     })
     }
 )
+
+//Obtencion y establecimiento de la hora actual
+horaActual = new Date().getHours()
+if(horaActual >= 6 && horaActual <= 19){
+    body.classList.add("diurno")
+    sol.classList.add("visible")
+    for(var colina of colinas){
+        colina.classList.add("dia")
+    }
+}
+else{
+    luna.classList.add("visible")
+    body.classList.add("nocturno")
+    for(var colina of colinas){
+        colina.classList.add("noche")
+    }
+}

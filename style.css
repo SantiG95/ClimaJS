@@ -2,7 +2,21 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(104, 134, 231);
+    
+}
+
+.diurno{
+    background: rgb(91,117,201);
+    background: linear-gradient(0deg, rgba(91,117,201,1) 0%, rgba(91,117,201,1) 30%, rgba(115,148,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.nocturno{
+    background: rgb(0,24,3);
+background: linear-gradient(21deg, rgba(0,24,3,1) 0%, rgba(51,65,128,1) 72%, rgba(37,56,164,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .div-informativo{
@@ -26,50 +40,17 @@ body{
 }
 
 .sol{
-    /*visibility: hidden;*/
+    visibility: hidden;
     position: absolute;
     width: 10em;
     height: 10em;
-    top: 45px;
-    right: 55px;
+    top: 10%;
+    right: 10%;
     display: relative;
     filter: drop-shadow(0 0 1px gold) 
             drop-shadow(0 0 25px rgb(255, 251, 0)) 
             drop-shadow(0 0 45px rgb(216, 202, 0))
             drop-shadow(0 0 65px rgb(255, 255, 255));
-}
-
-.sol-flare1{
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.466);
-    width: 10em;
-    height: 10em;
-    top: 45px;
-    left: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
-
-.sol-flare2{
-    background-color: rgb(255, 255, 167);
-    width: 90%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
-
-.sol-flare3{
-    background-color: yellow;
-    width: 90%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
 }
 
 .sol-centro{
@@ -95,10 +76,14 @@ body{
     position: absolute;
     width: 10em;
     height: 10em;
-    top: 45px;
-    right: 55px;
+    top: 10%;
+    right: 10%;
     display: relative;
-    filter: drop-shadow(0 0 1px black) drop-shadow(0 0 10px white);
+    filter: drop-shadow(0 0 1px white) 
+            drop-shadow(0 0 15px white)
+            drop-shadow(0 0 35px black)
+            drop-shadow(0 0 55px white)
+            ;
 }
 
 .luna-centro{
@@ -163,15 +148,17 @@ body{
 
 .luna-centro-gradiente{
     background: rgb(0,0,0);
-background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);height: 100%;
     border-radius: 50%;
     display: absolute;
     z-index: 3;
+}
 
+.visible{
+    visibility: visible;
 }
 
 .colinas{
-    /*background-color: red;*/
     height: 30%;
     width: 100%;
     position: absolute;
@@ -213,4 +200,14 @@ background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);he
     left: 60%;
     top: -360%;
     z-index: 5;
+}
+
+.dia{
+    background: rgb(0,91,10);
+    background: linear-gradient(5deg, rgba(0,91,10,1) 0%, rgba(40,102,43,1) 44%, rgba(49,190,38,1) 83%, rgba(0,233,0,1) 100%);
+}
+
+.noche{
+    background: rgb(0,24,3);
+    background: linear-gradient(17deg, rgba(0,24,3,1) 0%, rgba(35,20,51,1) 44%, rgba(68,27,129,1) 73%, rgba(73,0,201,1) 100%);
 }
